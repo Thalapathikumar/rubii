@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons (click)="home()" style="margin-left:20px" slot="start">
+      <ion-icon name="arrow-back-outline" style="font-size: 25px"></ion-icon>
+    </ion-buttons>
+    <ion-title>Create Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="spinner" class="rubii-spinner"></div>  
+  <ion-list>
+    <form [formGroup]="orderForm" (ngSubmit)="createOrder(orderForm)">
+    
+      <ion-item>
+        <ion-label position="floating"> Pickup Date </ion-label>
+        <ion-input formControlName="pickup_date" label="Pickup Date" type="date" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Pickup Time </ion-label>
+      <ion-input formControlName="pickup_time" label="Pickup Time" type="time" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Delivery Date </ion-label>
+      <ion-input formControlName="delivery_date" label="Delivery Date" type="date" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Delivery Time </ion-label>
+      <ion-input formControlName="delivery_time" label="Delivery Time" type="time" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Address Line 1 </ion-label>
+      <ion-input formControlName="address1" label="Address Line 1" type="text" labelPlacement="stacked" placeholder="Address Line 1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Address Line 2 </ion-label>
+      <ion-input formControlName="address2" label="Address Line 2" type="text" labelPlacement="stacked" placeholder="Address Line 2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> City </ion-label>
+      <ion-input formControlName="city" label="City" type="text" labelPlacement="stacked" placeholder="Enter City"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Postal Code </ion-label>
+      <ion-input formControlName="pincode" label="City" type="text" labelPlacement="stacked" placeholder="Enter Pincode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Email </ion-label>
+      <ion-input formControlName="email" label="Email" type="email" labelPlacement="stacked" placeholder="Enter Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone </ion-label>
+      <ion-input formControlName="phone" label="Phone" type="text" labelPlacement="stacked" placeholder="Enter Phone"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label class="counter-label">No: of Clothes</ion-label> <br>
+        <app-counter-input formControlName="counter" ngDefaultControl></app-counter-input>
+        <br>
+    </ion-item>
+    <ion-radio-group formControlName="payment">  
+      <ion-list-header>  
+        Payment Method  
+      </ion-list-header>  
+    
+      <ion-item  *ngFor="let x of gatewaysArraynew">  
+        <ion-label>{{x.title}}</ion-label>  
+        <ion-radio value="{{x.id}}"></ion-radio>  
+      </ion-item>  
+    </ion-radio-group>  <br>
+
+    <ion-button expand="block" [disabled]="!orderForm.valid" type="submit">Place Order</ion-button>
+  </form>
+    </ion-list>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home" (click)="home()" >
+          <ion-icon name="home-outline"></ion-icon>
+          Home
+        </ion-tab-button>
+  
+        <ion-tab-button tab="home">
+          <ion-icon name="bag-outline" (click)="orders()"></ion-icon>
+          Orders
+        </ion-tab-button>
+  
+        <ion-tab-button tab="search" (click)="wallet()">
+          <ion-icon name="wallet-outline"></ion-icon>
+          Wallet
+        </ion-tab-button>
+        <ion-tab-button tab="home" (click)="logout()">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Log out
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  
+</ion-content>

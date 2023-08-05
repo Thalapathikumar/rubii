@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="page-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-content">
+  <div *ngIf="spinner" class="rubii-spinner"></div> 
+  <ion-text color="primary">
+    <h1>Create an account</h1>
+  </ion-text>
+
+  <form class="signup-form" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+    <ion-item class="input-item">
+      <ion-label  position="stacked">First Name</ion-label>
+      <ion-input type="text" formControlName="firstname" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Last Name</ion-label>
+      <ion-input type="text" formControlName="lastname" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Username</ion-label>
+      <ion-input type="text" formControlName="username" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Email</ion-label>
+      <ion-input type="email" formControlName="email" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Password</ion-label>
+      <ion-input type="password" formControlName="password" clearInput="true"></ion-input>
+    </ion-item>
+
+    <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+    <p class="success-message" *ngIf="successMessage">{{successMessage}}</p>
+
+    <p class="log-in">
+      <a (click)="login()">Already have an account?</a>
+    </p>
+
+    <ion-button class="submit-btn" expand="block" [disabled]="!registerForm.valid" type="submit" strong="true">Sign up</ion-button>
+  </form>
+</ion-content>

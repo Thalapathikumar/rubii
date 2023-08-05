@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="logo-header">
+      <img src="assets/logo.png" class="header-bar-logo" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-title class="name-title"
+    >Hey
+    <span style="font-weight: 600; color: #42718a">{{username}}</span></ion-title
+  >
+  <app-slider></app-slider>
+  <ion-card (click)="editCheckout()" class="order">
+    <ion-card-header>
+      <div style="display: flex; justify-content: space-between">
+        <ion-card-title>Current Order - 5 Clothes</ion-card-title>
+
+        <ion-icon
+          style="color: #fff; font-size: 25px"
+          name="create-outline"
+        ></ion-icon>
+      </div>
+      <!-- <ion-card-subtitle>Order Status</ion-card-subtitle> -->
+    </ion-card-header>
+    <ion-card-content>Pickup: 20/06/2023 - 08.00am</ion-card-content>
+    <ion-card-content> Delivery: 20/06/2023 - 10.00am </ion-card-content>
+  </ion-card>
+  <ion-card class="loyal" (click)="wallet()">
+    <ion-card-header>
+      <ion-card-title>Loyalty Points</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> 200 </ion-card-content>
+  </ion-card>
+  <!-- <div style="display: flex; justify-content: space-between">
+    <ion-card color="dark" class="sub-button">
+      <ion-card-header>
+        <ion-card-subtitle style="text-align: center"
+          >Express Service</ion-card-subtitle
+        >
+      </ion-card-header>
+    </ion-card>
+    <ion-card color="dark" class="sub-button">
+      <ion-card-header>
+        <ion-card-subtitle style="text-align: center"
+          >Schedule Booking</ion-card-subtitle
+        >
+      </ion-card-header>
+    </ion-card>
+  </div> -->
+  <div class="circle" (click)="checkout()">
+    <a href="/checkout">
+      <p class="text">One tap book</p>
+    </a>
+  </div>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" (click)="about()">
+        <ion-icon name="reorder-three-outline"></ion-icon>
+        About
+      </ion-tab-button>
+
+      <ion-tab-button tab="home" (click)="orders()">
+        <ion-icon name="bag-outline"></ion-icon>
+        Orders
+      </ion-tab-button>
+
+      <ion-tab-button tab="search" (click)="wallet()">
+        <ion-icon name="wallet-outline"></ion-icon>
+        Wallet
+      </ion-tab-button>
+      <ion-tab-button tab="home" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Log out
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="checkout()">
+          <ion-icon name="shirt-outline"></ion-icon>
+      </ion-fab-button>
+  </ion-fab> -->
+</ion-content>

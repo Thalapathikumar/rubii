@@ -1,0 +1,44 @@
+.page-toolbar {
+  --background: var(--ion-color-light);
+}
+
+.page-content {
+  --padding-top: 20px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --background: var(--ion-color-light);
+}
+
+.input-item {
+  --padding-start: 0px;
+  --background: var(--ion-color-light);
+}
+
+.log-in {
+  text-align: right;
+  margin-top: 40px;
+}
+
+.signup-form {
+  margin-top: 50px
+}
+
+.login-button {
+  margin-top: 30px;
+}
+
+ion-label {
+  color: #000;
+}
+
+.error-message {
+  color: var(--ion-color-danger);
+}
+
+.success-message {
+  color: var(--ion-color-success);
+}
+
+.submit-btn {
+  margin-top: 60px;
+}

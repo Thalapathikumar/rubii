@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>One Tap Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Pickup Slot" type="datetime-local" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+    
+  
+  
+    <ion-item>
+      <ion-textarea rows="5" label="Address" labelPlacement="stacked" placeholder="Enter Address"></ion-textarea>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Delivery Slot" type="datetime-local" labelPlacement="stacked" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <form >
+        <ion-label style="padding-top:20px" class="counter-label">No: of Clothes</ion-label> <br>
+        <app-counter-input formControlName="counter"></app-counter-input>
+        <br>
+      </form>
+    </ion-item>
+  
+    <ion-item>
+     Payment Type 
+
+     <div style="display: flex;">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Cash on Delivery</ion-card-subtitle>
+        </ion-card-header>
+      
+        
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Online Payment</ion-card-subtitle>
+        </ion-card-header>
+      
+        
+      </ion-card>
+  
+    </div>
+    </ion-item>
+  
+
+    </ion-list>
+    
+  
+</ion-content>

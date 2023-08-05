@@ -1,0 +1,113 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons (click)="home()" style="margin-left:20px" slot="start">
+      <ion-icon name="arrow-back-outline" style="font-size: 25px"></ion-icon>
+    </ion-buttons>
+    <ion-title>About Rubii</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>About Us</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+       Content for about rubii
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Contact Us</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content"> 
+        Email: support@rubii.com<br>
+        Phone: 000000000</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>Terms & Conditions</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Last Updated: 05/07/2023 <br><br>
+
+These Terms and Conditions ("Terms") govern your use of the App and the services provided by the App ("Services"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree with these Terms, you may not use the App or avail yourself of the Services. The team has the entire right to modify the contents of this terms and conditions and get the consent of the users that use the app to book their ironing services.<br><br>
+
+1. Acceptance of Terms<br>
+By using the App, you represent and warrant that you are at least 18 years of age and capable of entering into a legally binding agreement. If you are using the App on behalf of a company or organization, you further represent and warrant that you have the authority to bind that entity to these Terms.<br>
+<br><br>
+2. App Services<br><br>
+(a) The App provides a platform to connect users ("Users") in need of clothes ironing services ("Services") with our service providers.<br>
+(b) The app provides up to two free pickup and delivery slot for every customer per month.<br>
+(c) A subscription plan is in place where users can make free pickup and delivery slot for as many times as possible.<br>
+(d) The App allows Users to request ironing services, schedule appointments, and make payments.<br>
+(e) The App is solely not responsible for the damage, or any mistake made during the entire process.<br>
+(f) Users will be intimated duly if any damage to the clothes is found before the start of the service.<br>
+
+<br><br>
+
+3. User Obligations<br><br>
+(a) Users are solely responsible for their interactions with pickup executives. Users agree to conduct themselves in a respectful and lawful manner.<br>
+(b) Users must provide accurate and up-to-date information during the registration process and when using the App's features.<br>
+(c) Users must ensure that they possess the legal right to request ironing services for the items they submit.<br>
+
+
+<br><br>
+5. Booking and Payments<br><br>
+(a) Users can schedule ironing services through the App. <br>
+(b) Users agree to pay the applicable fees for the Services as determined and displayed in the App.<br>
+(c) Users may be required to provide payment information, such as credit card details, and authorize the App to charge for the Services requested.<br>
+(d) The App may charge a service fee for the pickup and delivery of the clothes after exhausting their free pickup slots.<br>
+(e) Payments made through the App are processed by third-party payment processors, and the App is not responsible for any issues related to the payment process.<br>
+<br><br>
+
+6. Cancellations and Refunds<br><br>
+(a) Users may cancel or reschedule appointments through the App.<br>
+(b) Refunds, if applicable, will be processed based on the refund policy.<br>
+(c) In case of any damage to the clothes prior to the pickup the executive has the right to deny the service for the damaged clothe and may pick up the other clothes.<br>
+<br><br>
+
+7. Ratings and Reviews<br><br>
+(a) Users may have the option to rate and review Ironing Service Providers based on their experience.<br>
+(b) Users agree to provide honest and accurate feedback, without violating any applicable laws or defaming the Ironing Service Providers.<br>
+<br><br>
+8. Intellectual Property<br><br>
+(a) The App and its contents, including but not limited to text, graphics, logos, and software, are protected by intellectual property rights.<br>
+(b) Users are granted a limited, non-exclusive, non-transferable license to use the App for personal, non-commercial purposes.<br>
+(c) Users may not modify, reproduce, distribute, display, or create derivative works of the App without prior written consent from the App.<br>
+<br><br>
+9. Privacy<br><br>
+(a) The App will collect the data of the users like email id and phone number to create an account with us.<br>
+(b) It does not intend to use this information for any other purposes.
+(c) Customers are to provide other info like address that can be pinned using google maps for the purpose of pickup and drop of the clothes.
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  
+</ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" (click)="about()">
+      <ion-icon name="reorder-three-outline"></ion-icon>
+      About
+    </ion-tab-button>
+
+    <ion-tab-button tab="home" (click)="orders()">
+      <ion-icon name="bag-outline"></ion-icon>
+      Orders
+    </ion-tab-button>
+
+    <ion-tab-button tab="search" (click)="wallet()">
+      <ion-icon name="wallet-outline"></ion-icon>
+      Wallet
+    </ion-tab-button>
+    <ion-tab-button tab="home" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Log out
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+

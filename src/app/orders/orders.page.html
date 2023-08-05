@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons (click)="home()" style="margin-left:20px" slot="start">
+      <ion-icon name="arrow-back-outline" style="font-size: 25px"></ion-icon>
+    </ion-buttons>
+    <ion-title>My Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="spinner" class="rubii-spinner"></div> 
+  <ion-card *ngFor="let x of userOrders">
+    <ion-card-header>
+      <div style="display: flex; justify-content: space-between">
+        <ion-card-title>{{ x.date_created | date: 'dd/MM/y' }}</ion-card-title>
+        <ion-card-subtitle class="pending">{{ x.status }}</ion-card-subtitle>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let metaItem of x.meta_data">
+          <ng-container *ngIf="metaItem.key !== 'co_ordinates'">
+            <ion-label>{{ customLabels[metaItem.key] }}:</ion-label>
+            <ion-label>{{ metaItem.value }}</ion-label>
+          </ng-container>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-card-content *ngIf="x.status === 'processing'">
+      <ion-list>
+        <ion-item *ngFor="let metaItem of x.meta_items">
+          <ng-container *ngIf="metaItem.key !== 'co_ordinates'">
+            <ion-label>{{ customLabels[metaItem.key] }}:</ion-label>
+            <ion-label>{{ metaItem.value }}</ion-label>
+          </ng-container>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+  
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" (click)="home()">
+      <ion-icon name="home-outline"></ion-icon>
+      Home
+    </ion-tab-button>
+
+    <ion-tab-button tab="orders" (click)="orders()">
+      <ion-icon name="bag-outline"></ion-icon>
+      Orders
+    </ion-tab-button>
+
+    <ion-tab-button tab="wallet" (click)="wallet()">
+      <ion-icon name="wallet-outline"></ion-icon>
+      Wallet
+    </ion-tab-button>
+
+    <ion-tab-button tab="logout" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Log out
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+
+
+
+
+
+
+
+ 
+
