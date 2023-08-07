@@ -108,7 +108,7 @@ ion-tabs {
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
@@ -229,11 +229,11 @@ ion-tabs {
    */
 
   .md body {
-    --ion-background-color: #121212;
-    --ion-background-color-rgb: 18,18,18;
+    --ion-background-color: #fff;
+    --ion-background-color-rgb: #fff;
 
-    --ion-text-color: #ffffff;
-    --ion-text-color-rgb: 255,255,255;
+    --ion-text-color: #000;
+    --ion-text-color-rgb: #000;
 
     --ion-border-color: #222222;
 
