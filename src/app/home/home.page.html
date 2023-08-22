@@ -3,6 +3,10 @@
     <ion-title class="logo-header">
       <img src="assets/logo.png" class="header-bar-logo" />
     </ion-title>
+     <ion-icon (click)="profile()" slot="end"
+          style="color: #000; font-size: 42px;padding-right: 15px;"
+          name="person-circle"
+        ></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
@@ -11,15 +15,31 @@
     <span style="font-weight: 600; color: #42718a">{{username}}</span></ion-title
   >
   <app-slider></app-slider>
+  <!-- <div class="ion-padding">
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Location Coordinates</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label> Latitue </ion-label>
+        <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label> Longitude </ion-label>
+        <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+      </ion-item>
+    </ion-list>
+  </div> -->
+  
   <ion-card (click)="editCheckout()" class="order">
     <ion-card-header>
       <div style="display: flex; justify-content: space-between">
         <ion-card-title>Current Order - 5 Clothes</ion-card-title>
 
-        <ion-icon
+        <!-- <ion-icon
           style="color: #fff; font-size: 25px"
           name="create-outline"
-        ></ion-icon>
+        ></ion-icon> -->
       </div>
       <!-- <ion-card-subtitle>Order Status</ion-card-subtitle> -->
     </ion-card-header>

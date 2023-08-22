@@ -68,6 +68,7 @@ export class LoginPage implements OnInit {
         this.toast.presentToast({ message: "Loggedin successfully", color: 'success' });
         this.router.navigate(['/home'])
 
+        
         } 
 
         else {

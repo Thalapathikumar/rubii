@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { WoocommerceService } from '../services/woocommerce.service';
 import { ToastService } from '../services/toast.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-checkout',
@@ -13,18 +14,20 @@ export class CheckoutPage implements OnInit {
 
   orderForm: any = FormGroup
   spinner= false;
-  
-
+  profiledata:any;
+  profiledataArray: any =[];
   display_name: any;
   gatewaysArray:any = [];
   paymentTitle: any;
   gatewaysArraynew: any =[];
+  userId:any;
 
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private orderService : WoocommerceService,
+    private http: HttpClient,
     private toast: ToastService
   ) { 
     this.orderForm = new FormGroup({
@@ -46,6 +49,18 @@ export class CheckoutPage implements OnInit {
   ngOnInit() {
 
     this.display_name = localStorage.getItem ('display_name')
+    this.userId = localStorage.getItem('user_id')
+    console.log(this.userId)
+
+    this.http.get<any>('https://digitaldreamers.in/laundry/wp-json/wc/v3/customers/' + this.userId  +'?consumer_key=ck_aae3bbf858b90332dbc2dcc41fe9df7c0ce55916&consumer_secret=cs_4243e52e36c5a0065de151b550c1f8da48530a21').subscribe(data => {
+      this.profiledata = data.billing;
+
+      this.profiledataArray.push (this.profiledata)
+      console.log('array',this.profiledataArray)
+
+      console.log(this.profiledata.phone)
+      localStorage.setItem ('user_info', this.profiledataArray)
+  })  
 
     
 
@@ -80,14 +95,14 @@ console.log (this.paymentTitle)
       "billing": {
         "first_name":  this.display_name,
         "last_name": "",
-        "address_1": form.value.address1,
-        "address_2": form.value.address2,
-        "city": form.value.city,
+        "address_1": this.profiledata.address_1,
+        "address_2": this.profiledata.address_2,
+        "city": this.profiledata.city,
         "state": "TN",
-        "postcode": form.value.pincode,
+        "postcode": this.profiledata.postcode,
         "country": "IN",
-        "email": form.value.email,
-        "phone": form.value.phone,
+        "email": this.profiledata.email,
+        "phone": this.profiledata.phone,
       },
       "meta_data": [
         {
@@ -114,11 +129,11 @@ console.log (this.paymentTitle)
       "shipping": {
         "first_name": form.value.display_name,
         "last_name": "",
-        "address_1": form.value.address1,
-        "address_2": form.value.address2,
-        "city": form.value.city,
+        "address_1": this.profiledata.address_1,
+        "address_2": this.profiledata.address_2,
+        "city": this.profiledata.city,
         "state": "TN",
-        "postcode": form.value.pincode,
+        "postcode": this.profiledata.postcode,
         "country": "IN"
       },
       "line_items": [

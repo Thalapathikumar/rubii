@@ -20,6 +20,7 @@ export class RegisterPage implements OnInit {
   errorMessage: string;
   successMessage: string;
   spinner=false;
+  showAddress =false;
 
   constructor(
     private router: Router,
@@ -37,13 +38,22 @@ export class RegisterPage implements OnInit {
       firstname: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required)
+      username: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      addressLine1: new FormControl('', Validators.required),
+      addressLine2: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required),
+      pincode: new FormControl('', Validators.required),
     });
   }
 
   login() {
     this.router.navigate(['/login']);
   }
+
+addAddress(){
+ this.showAddress = true;
+}
 
   register(){
     this.router.navigate(['/register']);
@@ -56,8 +66,32 @@ export class RegisterPage implements OnInit {
         "first_name" : form.value.firstname,
         "last_name" : form.value.lastname,
         "password" : form.value.password,
-        "username" : form.value.username
-    }
+        "username" : form.value.username,
+        "billing": {
+          "first_name": form.value.firstname,
+          "last_name": form.value.lastname,
+          "company": "",
+          "address_1": form.value.addressLine1,
+          "address_2": form.value.addressLine2,
+          "city": form.value.city,
+          "state": "Tamil Nadu",
+          "postcode": form.value.pincode,
+          "country": "India",
+          "email": form.value.email,
+          "phone": form.value.phone
+        },
+        "shipping": {
+          "first_name": form.value.firstname,
+          "last_name": form.value.lastname,
+          "company": "",
+          "address_1": form.value.addressLine1,
+          "address_2": form.value.addressLine2,
+          "city": form.value.city,
+          "state": "Tamil Nadu",
+          "postcode": form.value.pincode,
+          "country": "India",
+        }
+      }
 
     this.spinner =true
 

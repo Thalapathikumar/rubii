@@ -13,6 +13,7 @@
   </ion-text>
 
   <form class="signup-form" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+    <div *ngIf="!this.showAddress">
     <ion-item class="input-item">
       <ion-label  position="stacked">First Name</ion-label>
       <ion-input type="text" formControlName="firstname" clearInput="true"></ion-input>
@@ -30,6 +31,10 @@
       <ion-input type="email" formControlName="email" clearInput="true"></ion-input>
     </ion-item>
     <ion-item class="input-item">
+      <ion-label  position="stacked">Phone Number</ion-label>
+      <ion-input type="text" formControlName="phone" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
       <ion-label  position="stacked">Password</ion-label>
       <ion-input type="password" formControlName="password" clearInput="true"></ion-input>
     </ion-item>
@@ -41,6 +46,35 @@
       <a (click)="login()">Already have an account?</a>
     </p>
 
+    <ion-button class="submit-btn" expand="block"  (click)="addAddress()" strong="true">Continue</ion-button>
+  </div>
+  <div *ngIf="this.showAddress">
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Address Line 1</ion-label>
+      <ion-input type="text" formControlName="addressLine1" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Address Line 2</ion-label>
+      <ion-input type="text" formControlName="addressLine2" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">City</ion-label>
+      <ion-input type="text" formControlName="city" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label  position="stacked">Pincode</ion-label>
+      <ion-input type="text" formControlName="pincode" clearInput="true"></ion-input>
+    </ion-item>
+   
+
+    <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+    <p class="success-message" *ngIf="successMessage">{{successMessage}}</p>
+
+    <!-- <p class="log-in">
+      <a (click)="login()">Already have an account?</a>
+    </p> -->
+
     <ion-button class="submit-btn" expand="block" [disabled]="!registerForm.valid" type="submit" strong="true">Sign up</ion-button>
+  </div>
   </form>
 </ion-content>
