@@ -42,24 +42,24 @@ export class PostsPage implements OnInit {
     })
   }
 
-  // loadData(event: any) {
-  //   const page = (Math.ceil(this.posts.length / 10)) + 1;
+  loadData(event: any) {
+    const page = (Math.ceil(this.posts.length / 10)) + 1;
 
-  //   this.wordpressService.getRecentPosts(this.categoryId, page)
-  //   .subscribe((newPagePosts: []) => {
-  //     this.posts.push(...newPagePosts);
-  //     event.target.complete();
-  //   }, err => {
-  //     // there are no more posts available
-  //     event.target.disabled = true;
-  //   })
-  // }
+    this.wordpressService.getRecentPosts(this.categoryId, page)
+    .subscribe((newPagePosts: []) => {
+      this.posts.push(...newPagePosts);
+      event.target.complete();
+    }, err => {
+      // there are no more posts available
+      event.target.disabled = true;
+    })
+  }
 
-  // logOut(){
-  //   this.authenticationService.logOut()
-  //   .then(
-  //     res => this.router.navigate(['/login']),
-  //     err => console.log('Error logging out')
-  //   )
-  // }
+  logOut(){
+    this.authenticationService.logOut()
+    .then(
+      res => this.router.navigate(['/login']),
+      err => console.log('Error logging out')
+    )
+  }
 }
