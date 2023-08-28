@@ -6,13 +6,13 @@ import { HttpClient,HttpHeaders } from "@angular/common/http";
   providedIn: "root",
 })
 export class WoocommerceService {
-  customerUrl =  "https://digitaldreamers.in/laundry/wp-json/wc/v3/customers?consumer_key=ck_aae3bbf858b90332dbc2dcc41fe9df7c0ce55916&consumer_secret=cs_4243e52e36c5a0065de151b550c1f8da48530a21";
+  customerUrl =  "https://rubiiecotec.com/laundry/wp-json/wc/v3/customers?consumer_key=ck_428c9eceb428be1f769c945c8700fb2095fc584c&consumer_secret=cs_309bd918c7abe106ad4f26858954e40558e09535";
   createOrderUrl =
-    "https://digitaldreamers.in/laundry/wp-json/wc/v3/orders?consumer_key=ck_aae3bbf858b90332dbc2dcc41fe9df7c0ce55916&consumer_secret=cs_4243e52e36c5a0065de151b550c1f8da48530a21";
+    "https://rubiiecotec.com/laundry/wp-json/wc/v3/orders?consumer_key=ck_428c9eceb428be1f769c945c8700fb2095fc584c&consumer_secret=cs_309bd918c7abe106ad4f26858954e40558e09535";
   paymentGatewayUrl =
-    "https://digitaldreamers.in/laundry/wp-json/wc/v3/payment_gateways?consumer_key=ck_aae3bbf858b90332dbc2dcc41fe9df7c0ce55916&consumer_secret=cs_4243e52e36c5a0065de151b550c1f8da48530a21";
+    "https://rubiiecotec.com/laundry/wp-json/wc/v3/payment_gateways?consumer_key=ck_428c9eceb428be1f769c945c8700fb2095fc584c&consumer_secret=cs_309bd918c7abe106ad4f26858954e40558e09535";
    ordersUrl =
-    "https://digitaldreamers.in/laundry/wp-json/wc/v3/orders?consumer_key=ck_aae3bbf858b90332dbc2dcc41fe9df7c0ce55916&consumer_secret=cs_4243e52e36c5a0065de151b550c1f8da48530a21";
+    "https://rubiiecotec.com/laundry/wp-json/wc/v3/orders?consumer_key=ck_428c9eceb428be1f769c945c8700fb2095fc584c&consumer_secret=cs_309bd918c7abe106ad4f26858954e40558e09535";
 
   constructor(private http: HttpClient) {}
 

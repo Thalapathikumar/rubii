@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
     this.spinner = true
     
     
-    this.http.post('https://digitaldreamers.in/laundry/wp-json/cocart/v2/login', formData).subscribe(
+    this.http.post('https://rubiiecotec.com/laundry/wp-json/cocart/v2/login', formData).subscribe(
       (response:any) => {
         console.log(response);
         this.spinner =false;
