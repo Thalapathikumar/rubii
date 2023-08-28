@@ -52,7 +52,7 @@ export class CheckoutPage implements OnInit {
     this.userId = localStorage.getItem('user_id')
     console.log(this.userId)
 
-    this.http.get<any>('https://digitaldreamers.in/laundry/wp-json/wc/v3/customers/' + this.userId  +'?consumer_key=ck_aae3bbf858b90332dbc2dcc41fe9df7c0ce55916&consumer_secret=cs_4243e52e36c5a0065de151b550c1f8da48530a21').subscribe(data => {
+    this.http.get<any>('https://rubiiecotec.com/laundry/wp-json/wc/v3/customers/' + this.userId  +'?consumer_key=ck_428c9eceb428be1f769c945c8700fb2095fc584c&consumer_secret=cs_309bd918c7abe106ad4f26858954e40558e09535').subscribe(data => {
       this.profiledata = data.billing;
 
       this.profiledataArray.push (this.profiledata)

@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   wordpress: {
-    api_url: 'https://digitaldreamers.in/wordpress/wp-json/wp/v2/',
-    auth_url: 'https://digitaldreamers.in/wordpress/wp-json/jwt-auth/v1/token'
+    api_url: 'https://rubiiecotec.com/laundry/wp-json/wp/v2/',
+    auth_url: 'https://rubiiecotec.com/laundry/wp-json/jwt-auth/v1/token'
   }
 };
 
